@@ -30,3 +30,22 @@ workflows:
           start: npm start
           wait-on: "http-get://localhost:3000"
           store_artifacts: true
+  # release:
+  #   jobs:
+  #     filters:
+  #       branches:
+  #         only:
+  #           - main
+  #           - cypress/install:
+  #         name: cypress-install
+  #         install-command: yarn install
+  #         build: npm run cypress.build
+  #     - cypress/run:
+  #         name: cypress-run
+  #         record: true
+  #         install-command: "yarn install"
+  #         requires:
+  #     - cypress-install
+  #         start: npm start
+  #         wait-on: "http-get://localhost:3000"
+  #         store_artifacts: true
