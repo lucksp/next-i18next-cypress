@@ -1,0 +1,32 @@
+version: 2.1
+
+orbs:
+  cypress: cypress-io/cypress@1
+
+executors:
+  node:
+    docker:
+      - image: circleci/node
+
+commands:
+  setup:
+    steps:
+      - checkout
+      - run: yarn install
+
+workflows:
+  pr:
+    jobs:
+      - cypress/install:
+          name: cypress-install
+          install-command: yarn install
+          build: npm run cypress.build
+      - cypress/run:
+          name: cypress-run
+          record: true
+          install-command: "yarn install"
+          requires:
+            - cypress-install
+          start: npm start
+          wait-on: "http-get://localhost:3000"
+          store_artifacts: true
