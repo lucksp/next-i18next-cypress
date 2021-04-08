@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^7.0.5",
-    "cypress": "^7.0.1",
+    "cypress": "6",
     "next-compose-plugins": "^2.2.1"
   }
 }
