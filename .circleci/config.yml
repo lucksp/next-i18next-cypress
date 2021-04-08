@@ -12,14 +12,14 @@ commands:
   setup:
     steps:
       - checkout
-      - run: yarn install
+      - run: yarn install --immutable --cache-folder ~/.cache/yarn
 
 workflows:
   pr:
     jobs:
       - cypress/install:
           name: cypress-install
-          install-command: yarn install
+          install-command: yarn install --immutable --cache-folder ~/.cache/yarn
           build: npm run cypress.build
       - cypress/run:
           name: cypress-run
