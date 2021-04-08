@@ -1,0 +1,14 @@
+{
+  "button": {
+    "cancel": "Cancel",
+    "login": "Log In",
+    "submit": "Submit",
+    "goBack": "Go Back"
+  },
+  "emailError": "Please enter a valid email.",
+  "forgot": "Forgot Password?",
+  "login": "Log In",
+  "passwordInputLabel": "Password",
+  "signUp": "Sign Up",
+  "commonTitle": "Main Test"
+}
